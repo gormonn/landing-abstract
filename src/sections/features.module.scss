@@ -1,0 +1,28 @@
+.section{
+  padding-top: 16rem;
+  padding-bottom: 13rem;
+  background: white;
+
+  &__header{
+    text-align: center;
+    position: relative;
+    margin-bottom: 3.6rem;
+    max-width: 960px;
+  }
+
+  &__list{
+    margin-top: 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .col{
+      display: flex;
+      flex-direction: column;
+      width: 48%;
+      padding-right: 50px;
+      padding-left: 50px;
+      box-sizing: border-box;
+    }
+  }
+}

@@ -16,7 +16,7 @@ const config: GatsbyConfig = {
       "path": "./src/images/"
     },
     __key: "images"
-  }]
+  }, "gatsby-plugin-tsconfig-paths" ]
 };
 
 export default config;

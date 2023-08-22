@@ -1,0 +1,11 @@
+$harold: url('../images/harold.webp');
+
+.home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: $harold;
+  background-size: cover;
+}

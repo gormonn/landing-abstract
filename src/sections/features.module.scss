@@ -1,6 +1,4 @@
 .section{
-  padding-top: 16rem;
-  padding-bottom: 13rem;
   background: white;
 
   &__header{
@@ -11,7 +9,6 @@
   }
 
   &__list{
-    margin-top: 6rem;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;

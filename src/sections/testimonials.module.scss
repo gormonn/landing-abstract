@@ -1,0 +1,76 @@
+.section {
+    background: #e6e6e6;
+
+    &__header{
+        text-align: center;
+        position: relative;
+        margin-bottom: 3.6rem;
+        max-width: 960px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+
+        .arrowL, .arrowR{
+            position: sticky;
+            top: 7.2rem;
+            width: 66px;
+            height: 66px;
+            border: none;
+            cursor: pointer;
+            background: transparent;
+            z-index: 2;
+            font-size: 2rem;
+        }
+        .arrowL{
+            left: 0;
+        }
+        .arrowR{
+            right: 0;
+        }
+
+        .review {
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            flex-shrink: 0;
+            .text{
+                text-align: center;
+                font-size: 2.5rem;
+                line-height: 1.8;
+                color: #555555;
+                margin-bottom: 3rem;
+            }
+
+            .col{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+
+                .avatar {
+                    height: 8.4rem;
+                    width: 8.4rem;
+                    border-radius: 50%;
+                    margin: 0 auto 1.2rem auto;
+                }
+
+                .name{
+                    font-size: 1.5rem;
+                    color: #000000;
+                }
+
+                .company{
+                    font-size: 1rem;
+                    color: #333333;
+                }
+            }
+
+        }
+    }
+
+}

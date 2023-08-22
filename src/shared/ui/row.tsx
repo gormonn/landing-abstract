@@ -1,6 +1,6 @@
-import React, {ComponentPropsWithoutRef, FC} from "react";
+import React, {ComponentPropsWithoutRef,  forwardRef} from "react";
 import classnames from "classnames";
 import './row.css'
 
-export const Row:FC<ComponentPropsWithoutRef<'div'>> = ({className, ...props}) =>
-    <div {...props} className={classnames('row', className)}/>
+export const Row = forwardRef<HTMLDivElement, ComponentPropsWithoutRef<'div'>>(({className, ...props}, ref) =>
+    <div {...props} ref={ref} className={classnames('row', className)}/>)

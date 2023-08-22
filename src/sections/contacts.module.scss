@@ -1,0 +1,10 @@
+.section {
+    background: white;
+
+    &__header{
+        text-align: center;
+        position: relative;
+        margin-bottom: 3.6rem;
+        max-width: 960px;
+    }
+}

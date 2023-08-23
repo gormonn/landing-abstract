@@ -1,0 +1,33 @@
+.field{
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+}
+
+
+.input, .textarea{
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-radius: .25rem;
+  border: 1px solid gray;
+  padding: 1rem;
+  resize: vertical;
+}
+
+.button{
+
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+
+  border: 1px solid gray;
+  padding: 1rem ;
+  cursor: pointer;
+  transition: opacity .2s;
+  border-radius: .25rem;
+  &:hover{
+    opacity: .9;
+  }
+}

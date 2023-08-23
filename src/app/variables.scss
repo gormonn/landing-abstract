@@ -1,0 +1,12 @@
+$black: #303030;
+$black-light: rgba($black, .85);
+$white: #ffffff;
+$white-light: darken($white, 20);
+
+:root{
+    --black: #{$black};
+    --black-light: #{$black-light};
+    --white: #{$white};
+    --white-light: #{$white-light};
+    --green: #39b54a;
+}

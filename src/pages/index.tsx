@@ -1,8 +1,7 @@
 import {PageProps} from "gatsby";
-import React, {FC, useRef} from "react";
-import 'normalize.css';
+import React, {FC} from "react";
 import {sections} from "app/sections";
-import 'app/style.scss'
+import 'app/index.scss'
 
 
 

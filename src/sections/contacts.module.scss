@@ -8,37 +8,56 @@
         max-width: 960px;
     }
 
-    &__form{
+    &__content{
+        background: var(--black-light);
+        color: white;
+        box-sizing: border-box;
+        border-radius: .5rem;
+        overflow: hidden;
         display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        width: 50%;
-        &_submit{
-            background: #39b54a;
-            border-color: #39b54a;
-            color: #FFFFFF;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .left, .contacts{
+            flex-grow: 1;
+            padding: 2.5rem 2rem 3.5rem;
         }
-        label{
+
+        .contacts{
+            max-width: 30%;
+            background: var(--black-light);
+            &__list{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                &_item{
+                    width: 50%;
+                }
+                p{
+                    line-height: 2;
+                }
+            }
+        }
+
+        &_header{
+            position: relative;
+            margin-bottom: 1rem;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+        }
+
+        &__form{
             display: flex;
             flex-direction: column;
-            gap: 0.25rem;
-
-            input{
-                box-sizing: border-box;
-                display: block;
-                height: 6rem;
-                padding: 1.5rem 0;
-                border: 0;
-                outline: none;
-                color: #333333;
-                font-family: "montserrat-light", sans-serif;
-                font-size: 1.4rem;
-                line-height: 3rem;
-                max-width: 100%;
-                background: transparent;
-                border-bottom: 2px solid rgba(0, 0, 0, 0.15);
-                -webkit-transition: all 0.3s ease-in-out;
-                transition: all 0.3s ease-in-out;
+            gap: 1rem;
+            &_submit{
+                background: #39b54a;
+                border-color: #39b54a;
+                color: #FFFFFF;
+            }
+            .form_field{
+                color: var(--white-light);
             }
         }
     }

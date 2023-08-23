@@ -1,0 +1,42 @@
+.header{
+  position: relative;
+  width: 100%;
+  .menuBtn{
+    position: fixed;
+    top: 1rem;
+    right: 2rem;
+    color: var(--black);
+    z-index: 99;
+    padding: .5rem;
+    border-radius: 0;
+    background: var(--green);
+  }
+}
+  .navbar{
+    background: var(--black);
+    color: var(--white-light);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 800;
+    overflow: hidden;
+    height: 100%;
+    width: 280px;
+    padding: 2rem;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    &__close{
+      color: var(--white-light);
+      position: absolute;
+      top:0;
+      right: 0;
+    }
+
+    &__item{
+      color: var(--white-light);
+    }
+  }
+

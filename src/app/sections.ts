@@ -6,17 +6,17 @@ import {Contacts} from "sections/contacts";
 export type Section = {href:string; label: string; Component?: FC}
 export const sections:Section[] = [
     {
-        href: '#features',
+        href: 'features',
         label: 'Features',
         Component: Features
     },
     {
-        href: '#testimonials',
+        href: 'testimonials',
         label: 'Testimonials',
         Component: Testimonials
     },
     {
-        href: '#contacts',
+        href: 'contacts',
         label: 'Contacts',
         Component: Contacts
     }

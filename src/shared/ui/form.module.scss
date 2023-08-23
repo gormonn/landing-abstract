@@ -18,10 +18,8 @@
 }
 
 .button{
-
   text-transform: uppercase;
   letter-spacing: .3rem;
-
   border: 1px solid gray;
   padding: 1rem ;
   cursor: pointer;
@@ -30,4 +28,13 @@
   &:hover{
     opacity: .9;
   }
+  &:active{
+    opacity: .8;
+  }
+  &.invisible{
+    background: transparent;
+    border: none;
+  }
 }
+
+

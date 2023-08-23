@@ -12,9 +12,11 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({ classN
     return <textarea ref={ref} className={classnames(css.textarea, className)} {...props}/>
 })
 
-type ButtonProps = ComponentPropsWithoutRef<'button'>;
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, ...props }, ref) => {
-    return <button ref={ref} className={classnames(css.button, className)} {...props}/>
+type ButtonProps = ComponentPropsWithoutRef<'button'> & {
+    invisible?:boolean;
+};
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, invisible, ...props }, ref) => {
+    return <button ref={ref} className={classnames(css.button, className, {[css.invisible]: invisible})} {...props}/>
 })
 
 type FieldProps = { label: string } & ComponentPropsWithoutRef<'label'>;

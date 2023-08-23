@@ -51,33 +51,5 @@ export const reviews:ReviewProps[] = [
         company: 'Finance Plus Inc.',
         avatarUrl: user03,
         text: 'Vital for financial analysis. Universal functionality, customization. Seamless integration. Intelligent automation.'
-    },
-    {
-        name: 'Olivia Wilson',
-        jobTitle: 'HR Manager',
-        company: 'HR Solutions Ltd.',
-        avatarUrl: user01,
-        text: 'HR department\'s best friend. Customization, integration, and automation. Crucial security.'
-    },
-    {
-        name: 'Daniel Lee',
-        jobTitle: 'Product Manager',
-        company: 'Product Innovations Co.',
-        avatarUrl: user02,
-        text: 'Revolutionized product management. Universal functionality, customization. Seamless integration. Intelligent automation.'
-    },
-    {
-        name: 'Ava Garcia',
-        jobTitle: 'Customer Support Specialist',
-        company: 'CustomerCare Inc.',
-        avatarUrl: user03,
-        text: 'Aids support specialists. Customization, integration, and automation. Protects sensitive data.'
-    },
-    {
-        name: 'William Turner',
-        jobTitle: 'Teacher',
-        company: 'Local High School',
-        avatarUrl: user01,
-        text: 'Transformed teaching methods. Versatile, customizable. Seamless integration. Aids in grading. Crucial for student data.'
-    },
+    }
 ];

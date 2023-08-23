@@ -1,12 +1,14 @@
 $black: #303030;
 $black-light: rgba($black, .85);
 $white: #ffffff;
-$white-light: darken($white, 20);
+$white-secondary: rgba($white, .5);
+$white-dark: darken($white, 20);
 
 :root{
     --black: #{$black};
     --black-light: #{$black-light};
     --white: #{$white};
-    --white-light: #{$white-light};
+    --white-dark: #{$white-dark};
+    --white-secondary: #{$white-secondary};
     --green: #39b54a;
 }

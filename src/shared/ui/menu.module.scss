@@ -14,7 +14,7 @@
 }
   .navbar{
     background: var(--black);
-    color: var(--white-light);
+    color: var(--white-dark);
     position: fixed;
     top: 0;
     right: 0;
@@ -29,14 +29,14 @@
     flex-direction: column;
 
     &__close{
-      color: var(--white-light);
+      color: var(--white-dark);
       position: absolute;
       top:0;
       right: 0;
     }
 
     &__item{
-      color: var(--white-light);
+      color: var(--white-dark);
     }
   }
 

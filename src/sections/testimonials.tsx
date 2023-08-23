@@ -12,6 +12,10 @@ export const Testimonials:FC<ComponentPropsWithoutRef<'section'>> = (props) => {
     const reviewRef = useRef<HTMLDivElement | null>(null);
     const [page, setPage] = useState(0);
 
+    useEffect(() => {
+        console.log(page,'page');
+    }, [page]);
+
     const go = (dir: Direction) => () => {
         setPage(page => {
             const newPage = page + dir;
@@ -22,7 +26,7 @@ export const Testimonials:FC<ComponentPropsWithoutRef<'section'>> = (props) => {
     }
 
     useEffect(() => {
-        if(!reviewRef.current) {
+        if(reviewRef.current) {
             const width = (reviewRef.current as HTMLDivElement).getBoundingClientRect().width || 0
             const left = page * width;
             (reviewRef.current as HTMLDivElement).scrollTo({left, behavior: 'smooth'})

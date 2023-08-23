@@ -2,7 +2,15 @@
 
 .section {
     background: white;
-    padding-bottom: 0;
+    @include respond('sm'){
+        padding-bottom: 0;
+    }
+    @include respond('md'){
+        padding-bottom: 0;
+    }
+    @include respond('pc'){
+        padding-bottom: 9rem;
+    }
 
     &__header{
         text-align: center;

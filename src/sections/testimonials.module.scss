@@ -20,7 +20,17 @@
         align-items: center;
 
         &__controls{
-            font-size: 2rem;
+            font-size: 1rem;
+
+            button{
+                padding: .5rem;
+                @include respond('md'){
+                    padding: .5rem;
+                }
+                @include respond('pc'){
+                    font-size: 1rem;
+                }
+            }
         }
 
         &_list {
@@ -73,6 +83,8 @@
                     .company {
                         font-size: 1rem;
                         color: #333333;
+                        max-width: 80%;
+                        text-align: center;
                     }
                 }
             }

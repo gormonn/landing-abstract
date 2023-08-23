@@ -13,7 +13,16 @@ const config: GatsbyConfig = {
       "path": "./src/images/"
     },
     __key: "images"
-  }, "gatsby-plugin-tsconfig-paths" ]
+  }, "gatsby-plugin-tsconfig-paths",
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: './src/images/super.webp',
+        name: `Dmitri's Awesome Product Landing Page`,
+        short_name: `Dmitri's Awesome Product Landing Page`,
+        start_url: `/`,
+      },
+    }]
 };
 
 export default config;

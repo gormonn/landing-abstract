@@ -32,12 +32,14 @@ export const Testimonials:FC<ComponentPropsWithoutRef<'section'>> = (props) => {
             <h3>Our Clients</h3>
             <h1>We has been honored to partner up with these clients</h1>
         </Row>
-        <Row lassName={css.section__container} >
-            <Button className={css.arrowL} onClick={go(Direction.Prev)} invisible>{'<'}</Button>
-            <Row ref={reviewRef} className={css.section__container_list} >
+        <Row className={css.carousel} >
+            <Row ref={reviewRef} className={css.carousel_list} >
                 {reviews.map(rev => <Review key={rev.name} {...rev} />)}
             </Row>
-            <Button className={css.arrowR} onClick={go(Direction.Next)} invisible>{'>'}</Button>
+            <div className={css.carousel__controls}>
+                <Button onClick={go(Direction.Prev)} invisible>← Prev</Button>
+                <Button onClick={go(Direction.Next)} invisible>Next →</Button>
+            </div>
         </Row>
     </section>
 }

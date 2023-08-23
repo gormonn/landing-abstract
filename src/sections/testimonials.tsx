@@ -1,9 +1,14 @@
-import React, {ComponentPropsWithoutRef, FC, memo, useCallback, useEffect, useRef, useState} from "react";
+import React, {
+    ComponentPropsWithoutRef, FC,
+    memo, useCallback, useEffect, useRef, useState
+} from "react";
+import classnames from "classnames";
+import {useSwipeable} from "react-swipeable";
+import {mergeRefs} from "react-merge-refs";
 import {Row} from "shared/ui/row";
 import {ReviewProps, reviews} from "shared/mock/reviews";
 import {Button} from "shared/ui/form";
 import * as css from "./testimonials.module.scss";
-import classnames from "classnames";
 
 enum Direction {
     Prev = -1,
@@ -13,18 +18,24 @@ export const Testimonials:FC<ComponentPropsWithoutRef<'section'>> = (props) => {
     const reviewRef = useRef<HTMLDivElement | null>(null);
     const [page, setPage] = useState(0);
 
-    const go = (dir: Direction) => () => {
+    const go = useCallback((dir: Direction) => () => {
         setPage(page => {
             const newPage = page + dir;
             if(newPage < 0) return reviews.length - 1;
             if(newPage >= reviews.length) return 0;
             return newPage;
         })
-    }
+    },[])
 
     const goTo = useCallback((page: number) => () => {
         setPage(page)
     },[])
+
+    const { ref:handlerRef, ...handlers } = useSwipeable({
+        onSwipedLeft: go(Direction.Next),
+        onSwipedRight: go(Direction.Prev),
+        trackMouse: true
+    });
 
     useEffect(() => {
         if(reviewRef.current) {
@@ -41,7 +52,7 @@ export const Testimonials:FC<ComponentPropsWithoutRef<'section'>> = (props) => {
             <h1>We has been honored to partner up with these clients</h1>
         </Row>
         <Row className={css.carousel} >
-            <Row ref={reviewRef} className={css.carousel_list}>
+            <Row ref={mergeRefs([reviewRef, handlerRef])} className={css.carousel_list} {...handlers}>
                 {reviews.map(rev => <Review key={rev.name} {...rev} />)}
             </Row>
             <div className={css.carousel__controls}>

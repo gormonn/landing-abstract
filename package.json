@@ -30,6 +30,8 @@
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-merge-refs": "^2.0.2",
+    "react-swipeable": "^7.0.1",
     "sass": "^1.66.1"
   },
   "devDependencies": {

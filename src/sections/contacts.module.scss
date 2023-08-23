@@ -1,5 +1,8 @@
+@import "../app/mixins.scss";
+
 .section {
     background: white;
+    padding-bottom: 0;
 
     &__header{
         text-align: center;
@@ -12,26 +15,43 @@
         background: var(--black-light);
         color: white;
         box-sizing: border-box;
-        border-radius: .5rem;
         overflow: hidden;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
+
+        @include respond('md'){
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        @include respond('pc'){
+            flex-direction: row;
+            justify-content: space-between;
+            border-radius: .5rem;
+        }
 
         .left, .contacts{
             flex-grow: 1;
-            padding: 2.5rem 2rem 3.5rem;
+            padding: 1rem;
+            @include respond('pc'){
+                padding: 2.5rem 2rem 3.5rem;
+            }
         }
 
         .contacts{
-            max-width: 30%;
             background: var(--black-light);
+
+            @include respond('pc'){
+                max-width: 30%;
+            }
             &__list{
                 display: flex;
                 flex-direction: column;
                 flex-wrap: nowrap;
                 &_item{
-                    width: 50%;
+                    @include respond('pc'){
+                        width: 50%;
+                    }
                 }
                 p{
                     line-height: 2;

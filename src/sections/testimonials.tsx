@@ -2,6 +2,7 @@ import React, {ComponentPropsWithoutRef, FC, useEffect, useRef, useState} from "
 import {Row} from "shared/ui/row";
 import * as css from "sections/testimonials.module.scss";
 import {ReviewProps, reviews} from "shared/mock/reviews";
+import {Button} from "shared/ui/form";
 
 enum Direction {
     Prev = -1,
@@ -31,10 +32,12 @@ export const Testimonials:FC<ComponentPropsWithoutRef<'section'>> = (props) => {
             <h3>Our Clients</h3>
             <h1>We has been honored to partner up with these clients</h1>
         </Row>
-        <Row ref={reviewRef} className={css.section__list} >
-            <button className={css.arrowL} onClick={go(Direction.Prev)}>{'<'}</button>
-            {reviews.map(rev => <Review key={rev.name} {...rev} />)}
-            <button className={css.arrowR} onClick={go(Direction.Next)}>{'>'}</button>
+        <Row lassName={css.section__container} >
+            <Button className={css.arrowL} onClick={go(Direction.Prev)} invisible>{'<'}</Button>
+            <Row ref={reviewRef} className={css.section__container_list} >
+                {reviews.map(rev => <Review key={rev.name} {...rev} />)}
+            </Row>
+            <Button className={css.arrowR} onClick={go(Direction.Next)} invisible>{'>'}</Button>
         </Row>
     </section>
 }

@@ -1,3 +1,5 @@
+@import "../app/mixins.scss";
+
 .section{
   background: white;
 
@@ -16,10 +18,24 @@
     .col{
       display: flex;
       flex-direction: column;
-      width: 48%;
-      padding-right: 50px;
-      padding-left: 50px;
+      width: 100%;
       box-sizing: border-box;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      text-align: center;
+
+      @include respond('md'){
+        width: 48%;
+        padding-right: 25px;
+        padding-left: 25px;
+        text-align: left;
+      }
+      @include respond('pc'){
+        width: 48%;
+        padding-right: 50px;
+        padding-left: 50px;
+        text-align: left;
+      }
     }
   }
 }

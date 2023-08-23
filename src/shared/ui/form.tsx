@@ -16,7 +16,7 @@ type ButtonProps = ComponentPropsWithoutRef<'button'> & {
     invisible?:boolean;
 };
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, invisible, ...props }, ref) => {
-    return <button ref={ref} className={classnames(css.button, className, {[css.invisible]: invisible})} {...props}/>
+    return <button ref={ref} className={classnames(className, {[css.invisible]: invisible}, css.button)} {...props}/>
 })
 
 type FieldProps = { label: string } & ComponentPropsWithoutRef<'label'>;

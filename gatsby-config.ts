@@ -1,6 +1,7 @@
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
+  pathPrefix: '/landing-abstract',
   siteMetadata: {
     title: `landing-abstract`,
     siteUrl: `https://www.yourdomain.tld`

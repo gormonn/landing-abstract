@@ -44,8 +44,8 @@ export const Testimonials:FC<ComponentPropsWithoutRef<'section'>> = (props) => {
                 {reviews.map(rev => <Review key={rev.name} {...rev} />)}
             </Row>
             <div className={css.carousel__controls}>
-                <Button onClick={go(Direction.Prev)} invisible>← Prev</Button>
-                <Button onClick={go(Direction.Next)} invisible>Next →</Button>
+                <Button onClick={go(Direction.Prev)} invisible>{'<'} Prev</Button>
+                <Button onClick={go(Direction.Next)} invisible>Next {'>'}</Button>
             </div>
         </Row>
     </section>

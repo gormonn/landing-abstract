@@ -24,6 +24,15 @@
 
             button{
                 padding: .5rem;
+                vertical-align: middle;
+
+                //div{
+                //    height:100%;
+                //}
+                //display: flex;
+                //flex-direction: row;
+                //align-items: center;
+
                 @include respond('md'){
                     padding: .5rem;
                 }

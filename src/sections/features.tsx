@@ -1,7 +1,7 @@
 import React, {ComponentPropsWithoutRef, FC} from "react";
-import * as css from './features.module.scss'
 import {Row} from "shared/ui/row";
 import {FeatureProps, features} from "shared/mock/features";
+import * as css from './features.module.scss'
 
 export const Features:FC<ComponentPropsWithoutRef<'section'>> = (props) => {
     return <section {...props} className={css.section}>

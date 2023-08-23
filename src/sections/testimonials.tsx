@@ -1,15 +1,15 @@
 import React, {ComponentPropsWithoutRef, FC, useEffect, useRef, useState} from "react";
 import {Row} from "shared/ui/row";
-import * as css from "sections/testimonials.module.scss";
 import {ReviewProps, reviews} from "shared/mock/reviews";
 import {Button} from "shared/ui/form";
+import * as css from "./testimonials.module.scss";
 
 enum Direction {
     Prev = -1,
     Next = 1,
 }
 export const Testimonials:FC<ComponentPropsWithoutRef<'section'>> = (props) => {
-    const reviewRef = useRef<HTMLDivElement>(document.createElement('div'));
+    const reviewRef = useRef<HTMLDivElement | null>(null);
     const [page, setPage] = useState(0);
 
     const go = (dir: Direction) => () => {
@@ -22,8 +22,11 @@ export const Testimonials:FC<ComponentPropsWithoutRef<'section'>> = (props) => {
     }
 
     useEffect(() => {
-        const left = page * (reviewRef.current.getBoundingClientRect().width || 0)
-        reviewRef.current.scrollTo({ left, behavior: 'smooth' })
+        if(!reviewRef.current) {
+            const width = (reviewRef.current as HTMLDivElement).getBoundingClientRect().width || 0
+            const left = page * width;
+            (reviewRef.current as HTMLDivElement).scrollTo({left, behavior: 'smooth'})
+        }
     }, [page]);
 
 

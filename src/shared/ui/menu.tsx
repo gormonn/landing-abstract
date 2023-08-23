@@ -6,7 +6,7 @@ import * as css from './menu.module.scss'
 
 
 const scrollTo = (href:string) => () => {
-    document.querySelector('#'+href).scrollIntoView({ behavior: 'smooth' })
+    document?.querySelector('#' + href).scrollIntoView({behavior: 'smooth'})
 }
 
 export const Menu:FC<{sections: Section[]}> = ({sections}) => {
@@ -16,16 +16,16 @@ export const Menu:FC<{sections: Section[]}> = ({sections}) => {
         transform: isOpen ? 'translateX(0%)' : 'translateX(100%)',
     }), [isOpen])
 
-    const navRef = useRef<HTMLElement>(document.createElement('nav'));
+    const navRef = useRef<HTMLElement | null>(null);
     useEffect(()=>{
         const handleClickOutside = (e: MouseEvent) => {
-            if (navRef.current && !navRef.current?.contains(e.target as HTMLElement)) {
+            if (navRef.current && !(navRef.current as HTMLElement)?.contains(e.target as HTMLElement)) {
                 setIsOpen(false);
             }
         }
-        document.body.addEventListener('click', handleClickOutside, {capture:true})
+        document?.body.addEventListener('click', handleClickOutside, {capture:true})
         return () => {
-            document.body.removeEventListener('click', handleClickOutside, {capture:true})
+            document?.body.removeEventListener('click', handleClickOutside, {capture:true})
         }
     },[])
 

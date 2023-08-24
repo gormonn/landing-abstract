@@ -45,6 +45,19 @@ export const Testimonials:FC<ComponentPropsWithoutRef<'section'>> = (props) => {
         }
     }, [page]);
 
+    useEffect(() => {
+        let resizeTimer;
+        const handleResize = () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                setPage(0);
+            }, 300);
+        }
+        window?.addEventListener('resize', handleResize)
+        return () => {
+            window?.removeEventListener('resize', handleResize)
+        }
+    },[])
 
     return <section {...props} className={css.section}>
         <Row className={css.section__header}>
